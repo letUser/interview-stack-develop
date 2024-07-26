@@ -40,7 +40,7 @@ describe("ProductsPage", () => {
             </MemoryRouter>
         );
         await waitFor(() => {
-            expect(screen.getByTestId(`pipeline-container`)).toBeInTheDocument();
+            expect(screen.getByTestId(`active-products-container`)).toBeInTheDocument();
         });
         server.close();
     });

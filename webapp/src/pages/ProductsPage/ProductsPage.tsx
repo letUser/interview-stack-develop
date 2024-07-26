@@ -39,7 +39,7 @@ const ProductsPage = () => {
         <Spinner />
       </div>
     );
-  } else {
+  } else if (loadingState === DATA_STATES.loaded) {
     content = (
       <div
         className="grid grid-cols-3 gap-4 justify-center items-center w-full pt-4"
@@ -57,6 +57,15 @@ const ProductsPage = () => {
             </div>
           ))
         }
+      </div>
+    );
+  } else {
+    content = (
+      <div
+        className="flex flex-row justify-center w-full pt-4 text-3xl font-bold text-white"
+        data-testid="error-container"
+      >
+        An error occured fetching the data!
       </div>
     );
   }
