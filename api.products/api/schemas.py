@@ -4,7 +4,7 @@ class ProductSchema(Schema):
     ProductID = fields.Int()
     ProductName = fields.Str()
     ProductPhotoURL = fields.Str()
-    ProductStatus = fields.Int()
+    ProductStatus = fields.Str()
     @pre_load
     def make_object(self, data, **kwargs):
         return data
