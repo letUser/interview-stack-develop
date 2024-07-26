@@ -19,4 +19,4 @@ def after_request(response):
 app.register_blueprint(products_blueprint, url_prefix=PRODUCTS_URL)
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5001)
+    app.run(debug=True, host="0.0.0.0", port=5002)
