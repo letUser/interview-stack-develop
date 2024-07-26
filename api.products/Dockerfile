@@ -1,6 +1,6 @@
 FROM python:3.8-buster
 
-WORKDIR /api.orders
+WORKDIR /api.products
 
 RUN apt-get update
 RUN apt-get -y install libmariadb3 libmariadb-dev
