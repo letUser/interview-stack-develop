@@ -90,7 +90,7 @@ npm run test
 To run the pytests from the root directory run the following commands
 
 ```Bash
-docker compose exec -it api-orders bash
+docker compose exec -it api.orders bash
 python -m pytest tests/ # from within the container
 ```
 
@@ -103,7 +103,7 @@ You can also install all the dependencies locally and run the tests using the sa
 To run the pytests from the root directory run the following commands
 
 ```Bash
-docker compose exec -it api-products bash
+docker compose exec -it api.products bash
 python -m pytest tests/ # from within the container
 ```
 

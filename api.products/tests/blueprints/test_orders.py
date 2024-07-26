@@ -6,7 +6,7 @@ import json
 
 @fixture()
 def test_client(test_app):
-    test_app.register_blueprint(orders_blueprint, url_prefix=PRODUCTS_URL)
+    test_app.register_blueprint(products_blueprint, url_prefix=PRODUCTS_URL)
     return test_app.test_client()
 
 @fixture()
@@ -35,7 +35,7 @@ def test_get_all_products(test_client, init_db):
     deserialized_response = json.loads(response.data)
     data = deserialized_response.get('data')
     assert data is not None
-    assert len(data) == 5
+    assert len(data) == 2
 
 def test_get_active_products(test_client, init_db):
     response = test_client.get(f"{PRODUCTS_URL}/active")
@@ -43,7 +43,7 @@ def test_get_active_products(test_client, init_db):
     deserialized_response = json.loads(response.data)
     data = deserialized_response.get('data')
     assert data is not None
-    assert len(data) == 3
+    assert len(data) == 1
     for product in data:
         assert product.get("ProductStatus") == 'Active'
 
@@ -53,6 +53,6 @@ def test_get_inactive_products(test_client, init_db):
     deserialized_response = json.loads(response.data)
     data = deserialized_response.get('data')
     assert data is not None
-    assert len(data) == 2
+    assert len(data) == 1
     for product in data:
         assert product.get("ProductStatus") == 'InActive'
