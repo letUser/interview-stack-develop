@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { DragDropContext } from 'react-beautiful-dnd';
-import DraggableList from "../../components/DraggableList/DraggableList";
 import Spinner from "../../components/Spinner/Spinner";
 import { Product, ActiveProductsData } from "../../components/interfaces";
 import { getActiveProductsData } from "../ApiHelper";
